@@ -1,8 +1,46 @@
 body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
     margin: 0px;
     min-height: 100vh;
     width: 100vw;
+
 }   
+
+#opponent-choice {
+    width: 240px;
+    height: 240px;
+    margin: 10px;
+    /* background-color: cyan; */
+}
+#your-choice {
+    width: 240px;
+    height: 240px;
+    margin: 10px;
+    /* background-color: yellow; */
+    margin-top:  10px;
+}
+
+#choices {
+    display: block;
+    width: 250px;
+    height: 80px;
+    background-color: transparent;
+    margin: 0 auto;
+    margin-top: 10px;
+
+}
+
+#choices img {
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+
+}
+
+#grass {
+    background-color: transparent;
+}
 
 #backgroundimage {
     position: absolute;
