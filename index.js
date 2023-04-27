@@ -1,6 +1,6 @@
-let you;
+let myPokemon;
 let yourScore = 0;
-let opponent;
+let opponentPokemon;
 let opponentScore = 0;
 
 let choices = ["grass", "fire", "water"]
@@ -10,8 +10,8 @@ window.onload = function() {
         //<img id ="grass", "fire", "water"
         let choice = document.createElement("img");
         choice.id = choices[i];
-        choice.addEventListener("click", selectChoice);
         choice.src = choices[i] + ".png";
+        choice.addEventListener("click", selectChoice);
         document.getElementById("choices").append(choice)
     }
 }
@@ -45,23 +45,28 @@ const handleChoiceClick = (url, myPokemon) =>{
          }
     if (opponentPokemon == "grass") {
         if (myPokemon == "water") {
+            opponentScore += 1;
         console.log("You Lose!")       
         } else if (myPokemon == "fire") {
+            yourScore +=1;
             console.log("You Win!")
         } else if (myPokemon == "grass") {
             console.log("Again!")
         }
          }
     if (opponentPokemon == "fire") {
-        if (myPokemon == "gras") {
+        if (myPokemon == "grass") {
+            opponentScore += 1;
         console.log("You Lose!")       
         } else if (myPokemon == "water") {
+            yourScore += 1;
             console.log("You Win!")
         } else if (myPokemon == "fire") {
             console.log("Again!")
         }
          }
-
+document.getElementById("your-score").innerText = yourScore;
+document.getElementById("opponenet-score").innerText = opponentScore;
 
 }
  //you are choosing
