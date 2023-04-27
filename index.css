@@ -22,7 +22,8 @@ body {
 }
 
 #choices {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     width: 250px;
     height: 80px;
     background-color: transparent;
@@ -34,7 +35,7 @@ body {
 #choices img {
     width: 80px;
     height: 80px;
-    background-color: transparent;
+    background-color: ;
 
 }
 
@@ -57,4 +58,14 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+}
+
+span {
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+h1 {
+    font-size: 35px;
+    font-family: fantasy;
 }

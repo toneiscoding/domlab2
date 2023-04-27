@@ -66,7 +66,7 @@ const handleChoiceClick = (url, myPokemon) =>{
         }
          }
 document.getElementById("your-score").innerText = yourScore;
-document.getElementById("opponenet-score").innerText = opponentScore;
+document.getElementById("opponent-score").innerText = opponentScore;
 
 }
  //you are choosing
