@@ -35,7 +35,7 @@ body {
 #choices img {
     width: 80px;
     height: 80px;
-    background-color: ;
+    /* background-color: ; */
 
 }
 
@@ -68,4 +68,10 @@ span {
 h1 {
     font-size: 35px;
     font-family: fantasy;
+}
+
+div {
+    font-size: 25px;
+    font-family: fantasy;
+    font-style: italic;
 }
