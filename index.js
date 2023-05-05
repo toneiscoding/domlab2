@@ -5,7 +5,7 @@ let myPokemon;
 let yourScore = 0;
 let opponentPokemon;
 let opponentScore = 0;
-
+let messageDiv = document.querySelector("#message")
 //This line of code declares an array called choices containing the strings "grass", "fire", and "water" which will reprsent our choices of elements of our pokemon represented by squirtle, bulbasaur and charmander to their respected elements.
 let choices = ["grass", "fire", "water"]
 
@@ -21,7 +21,25 @@ window.onload = function() {
         document.getElementById("choices").append(choice)
     }
 }
+///logs on screen who wins the round
+const endRound = (roundWinner) => {
+    
+  
+    if (roundWinner === "opponent") {
+        opponentScore++;
+        messageDiv.textContent = "Opponent Scored"
 
+    } 
+    else if (roundWinner === "you") { 
+        yourScore++;
+        messageDiv.textContent = "You Scored"
+          // put message on screen
+    } else  { 
+        messageDiv.textContent = "You Tied Go Again!"
+        //put message on screen
+    }
+}
+endRound()
 
 
 //attaching the image and click
@@ -37,34 +55,37 @@ const handleChoiceClick = (url, myPokemon) =>{
     //these next sets tell which elements beat which, and how the scoring system is set up 
     if (opponentPokemon == "water") {
         if (myPokemon == "fire") {
-            opponentScore += 1;
+            endRound("opponent");
         console.log("You Lose!")       
         } else if (myPokemon == "grass") {
-            yourScore += 1;
+            endRound("you");
             console.log("You Win!")
         } else if (myPokemon == "water") {
+            endRound("tie");
             console.log("Again!")
         }
          }
     if (opponentPokemon == "grass") {
         if (myPokemon == "water") {
-            opponentScore += 1;
+            endRound("opponent")
         console.log("You Lose!")       
         } else if (myPokemon == "fire") {
-            yourScore +=1;
+            endRound("you");
             console.log("You Win!")
         } else if (myPokemon == "grass") {
+            endRound("tie");
             console.log("Again!")
         }
          }
     if (opponentPokemon == "fire") {
         if (myPokemon == "grass") {
-            opponentScore += 1;
+            endRound("opponent");
         console.log("You Lose!")       
         } else if (myPokemon == "water") {
-            yourScore += 1;
+            endRound("you");
             console.log("You Win!")
         } else if (myPokemon == "fire") {
+            endRound("tie");
             console.log("Again!")
         }
          }
@@ -72,10 +93,10 @@ const handleChoiceClick = (url, myPokemon) =>{
 document.getElementById("your-score").innerText = yourScore;
 document.getElementById("opponent-score").innerText = opponentScore;
 //this tells you a message depending on if your score is 5 or the opponent score is 5 first.  
-if (yourScore >= 5) {
+if (yourScore >= 3) {
     alert("You win, you big winner! PLAY AGAIN! Choose your Pokemon!");
     resetGame();
-} else if (opponentScore >= 5) {
+} else if (opponentScore >= 3) {
     alert("You lose, dust yourself off and try again! Choose your Pokemon");
     resetGame()
 }
